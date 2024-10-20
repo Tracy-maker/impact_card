@@ -1,5 +1,11 @@
+import ImpactCard from "./Pages/ImpactCard";
+
 function App() {
-  return <div>123</div>;
+  return (
+    <div>
+      <ImpactCard />
+    </div>
+  );
 }
 
 export default App;
