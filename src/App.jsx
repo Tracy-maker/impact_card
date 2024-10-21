@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ImpactCard from "./pages/ImpactCard";
+import ImpactCard from "./page/ImpactCard";
 import CardList from "./components/CardList";
 import cardData from "./utils/cardData";
 import SocialShare from "./components/SocialShare";
