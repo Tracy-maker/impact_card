@@ -2,7 +2,6 @@ import React from 'react';
 
 const SocialShare = () => {
   const handleShare = (platform) => {
-
     const url = window.location.href;
     const message = "Check out this impact card!";
 
@@ -14,16 +13,16 @@ const SocialShare = () => {
   };
 
   return (
-    <div className="p-4 flex space-x-4">
-      <button 
-        onClick={() => handleShare('facebook')} 
-        className="bg-blue-600 text-white p-2 rounded-lg"
+    <div className="flex justify-center space-x-4">
+      <button
+        onClick={() => handleShare('facebook')}
+        className="bg-blue-600 text-white py-2 px-4 rounded-full shadow-md hover:bg-blue-500 transition"
       >
         Share on Facebook
       </button>
-      <button 
-        onClick={() => handleShare('twitter')} 
-        className="bg-blue-400 text-white p-2 rounded-lg"
+      <button
+        onClick={() => handleShare('twitter')}
+        className="bg-blue-400 text-white py-2 px-4 rounded-full shadow-md hover:bg-blue-300 transition"
       >
         Share on Twitter
       </button>

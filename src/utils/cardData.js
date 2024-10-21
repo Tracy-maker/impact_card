@@ -17,6 +17,10 @@ const cardData = {
     total: 400,
   },
 
+  backgroundColor: "bg-pink-300",
+  backgroundOverlayColor: "bg-pink-400",
+
+  // Rewards data
   rewards: [
     {
       label: "Seed Pods Planted",
@@ -35,6 +39,7 @@ const cardData = {
     },
   ],
 
+  // Impact metrics data
   impactMetrics: [
     {
       icon: FaSeedling,

@@ -4,14 +4,13 @@ import CardImage from "../components/CardImage";
 import ImpactDescription from "../components/ImpactDescription";
 import ProofOfImpact from "../components/ProofOfImpact";
 import Rewards from "../components/Rewards";
-import SocialShare from "../components/SocialShare";
 import cardData from "../utils/cardData";
 
 const ImpactCard = () => {
   const { brandLogo, brandName, imageUrl, description } = cardData;
 
   return (
-    <div className="relative max-w-sm mx-auto shadow-lg overflow-hidden rounded-lg">
+    <div className="relative max-w-80 mx-auto shadow-lg overflow-hidden rounded-lg">
       <CardHeader brandLogo={brandLogo} brandName={brandName} />
 
       {/* Main content */}
@@ -25,7 +24,6 @@ const ImpactCard = () => {
       {/* Additional Sections */}
       <ProofOfImpact />
       <Rewards />
-      <SocialShare />
     </div>
   );
 };

@@ -1,14 +1,16 @@
 import React from "react";
+import cardData from "../utils/cardData";
 
 const CardImage = ({ imageUrl, altText }) => {
+  const { backgroundOverlayColor } = cardData;
+
   return (
-    <div className="relative w-full h-80 ">
-      <img
-        src={imageUrl}
-        alt={altText}
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-pink-400 bg-opacity-30"></div>{" "}
+    <div className="relative w-full h-96">
+      <img src={imageUrl} alt={altText} className="w-full h-full object-fill" />
+
+      <div
+        className={`absolute inset-0 ${backgroundOverlayColor} bg-opacity-30`}
+      ></div>
     </div>
   );
 };
