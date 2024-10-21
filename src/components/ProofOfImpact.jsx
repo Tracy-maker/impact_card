@@ -1,12 +1,12 @@
 import React from "react";
 
 const ProofOfImpact = ({ card }) => {
-  const { impactMetrics, brandLogo } = card;
+  const { impactMetrics, brandLogo, backgroundColor } = card;
 
   return (
-    <div className="bg-pink-300 p-2 text-center shadow-lg">
+    <div className={`p-2 text-center shadow-lg ${backgroundColor}`}>
       <div className="grid grid-cols-3 gap-1 text-white">
-        {impactMetrics.map((metric, index) => (
+        {impactMetrics?.map((metric, index) => (
           <div key={index} className="flex flex-col items-center p-1">
             <div className="flex items-center">
               {metric.icon ? (
@@ -16,13 +16,12 @@ const ProofOfImpact = ({ card }) => {
               )}
               <p className="text-base font-bold ml-2">{metric.value}</p>
             </div>
-
             <p className="text-xs font-light mt-1">{metric.label}</p>
           </div>
         ))}
       </div>
 
-      <div className="mt-1 pt-1 border-t border-pink-200 text-xs flex items-center justify-center">
+      <div className="mt-1 pt-1 border-t border-white text-xs flex items-center justify-center">
         <div className="bg-white p-1 rounded-full text-white shadow-md flex items-center justify-center w-8 h-8">
           <img
             src={brandLogo}
