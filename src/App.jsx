@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import ImpactCard from "./pages/ImpactCard";
+import CardList from "./components/CardList";
+import cardData from "./utils/cardData";
 import SocialShare from "./components/SocialShare";
-import CardList from "./components/CardList"; // Import renamed CardList
 
 function App() {
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+
+  const handleCardChange = (index) => {
+    setCurrentCardIndex(index);
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 space-y-6">
-      <ImpactCard />
+      <ImpactCard card={cardData[currentCardIndex]} />
+
+      <CardList totalItems={cardData.length} onCardChange={handleCardChange} />
       <SocialShare />
-      <CardList />
     </div>
   );
 }

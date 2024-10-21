@@ -1,17 +1,32 @@
 import React, { useState } from "react";
 
-const CardList = () => {
-  const totalItems = 5; // Number of items in the card list
+const CardList = ({ totalItems, onCardChange }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const visibleItemsCount = 6;
+
+  const startIndex =
+    Math.floor(currentIndex / visibleItemsCount) * visibleItemsCount;
+  const endIndex = Math.min(startIndex + visibleItemsCount, totalItems);
+
+  const getVisibleItems = () => {
+    const visibleItems = [];
+    for (let i = startIndex; i < endIndex; i++) {
+      visibleItems.push(i);
+    }
+    return visibleItems;
+  };
+
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
+    const newIndex = (currentIndex + 1) % totalItems;
+    setCurrentIndex(newIndex);
+    onCardChange(newIndex);
   };
 
   const goToPrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? totalItems - 1 : prevIndex - 1
-    );
+    const newIndex = currentIndex === 0 ? totalItems - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    onCardChange(newIndex);
   };
 
   return (
@@ -26,11 +41,13 @@ const CardList = () => {
 
       {/* Card Indicators */}
       <div className="flex space-x-2">
-        {Array.from({ length: totalItems }).map((_, index) => (
+        {getVisibleItems().map((index) => (
           <div
             key={index}
             className={`w-8 h-12 rounded-lg border ${
-              index === currentIndex ? "bg-white shadow-md" : "bg-transparent border-gray-300"
+              index === currentIndex
+                ? "bg-white shadow-md"
+                : "bg-transparent border-gray-300"
             }`}
           />
         ))}

@@ -4,10 +4,9 @@ import CardImage from "../components/CardImage";
 import ImpactDescription from "../components/ImpactDescription";
 import ProofOfImpact from "../components/ProofOfImpact";
 import Rewards from "../components/Rewards";
-import cardData from "../utils/cardData";
 
-const ImpactCard = () => {
-  const { brandLogo, brandName, imageUrl, description } = cardData;
+const ImpactCard = ({ card }) => {
+  const { brandLogo, brandName, imageUrl, description } = card;
 
   return (
     <div className="relative max-w-80 mx-auto shadow-lg overflow-hidden rounded-lg">
@@ -22,8 +21,8 @@ const ImpactCard = () => {
       </div>
 
       {/* Additional Sections */}
-      <ProofOfImpact />
-      <Rewards />
+      <ProofOfImpact card={card} />
+      <Rewards card={card} />
     </div>
   );
 };
