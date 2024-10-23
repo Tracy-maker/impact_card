@@ -23,15 +23,12 @@ Installation
    ```bash
    git clone git@github.com:Tracy-maker/impact_card.git
    ```
-2. Navigate to the project directory:
-   ```bash
-   cd impact_card
    ```
-3. Install dependencies:
+2. Install dependencies:
    ```bash
    npm install
    ```
-4. Start the development server:
+3. Start the development server:
    ```bash
    npm start
    ```
