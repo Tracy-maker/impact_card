@@ -23,7 +23,6 @@ Installation
    ```bash
    git clone git@github.com:Tracy-maker/impact_card.git
    ```
-   ```
 2. Install dependencies:
    ```bash
    npm install
